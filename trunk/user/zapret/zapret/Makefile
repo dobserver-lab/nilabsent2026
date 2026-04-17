@@ -30,5 +30,3 @@ clean:
 
 romfs:
 	$(ROMFSINST) -p +x $(SRC_NAME)/binaries/my/nfqws /usr/bin/nfqws
-	$(ROMFSINST) -p +x /usr/bin/zapret.sh
-	$(ROMFSINST) -d config /usr/share/zapret

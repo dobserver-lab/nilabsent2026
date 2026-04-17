@@ -304,7 +304,7 @@ function zapret_strategy_change(o, v) {
                                                 <input type="button" class="btn btn-mini btn-danger" style="outline:0" onclick="restoreZapret();" value="<#CTL_restore#>"/>
                                             </td>
                                             <tr>
-                                                <td id="zapret.strategy" colspan="2" style="padding-top: 0px; border-top: 0 none">
+                                                <td id="zapret.strategy" colspan="2" style="padding-top: 0px; border-top: 0 none; display:none">
                                                     <div>
                                                         <textarea rows="20" spellcheck="false" maxlength="4096" class="span12 strategy" id="zapretc.strategy" name="zapretc.strategy"><% nvram_dump("zapretc.strategy",""); %></textarea>
                                                         <textarea rows="20" spellcheck="false" maxlength="4096" class="span12 strategy" id="zapretc.strategy0" name="zapretc.strategy0"><% nvram_dump("zapretc.strategy0",""); %></textarea>

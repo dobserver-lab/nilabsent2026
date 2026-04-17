@@ -30,9 +30,7 @@ clean:
 
 romfs:
 	$(ROMFSINST) -p +x $(SRC_NAME)/binaries/my/nfqws2 /usr/bin/nfqws2
-	$(ROMFSINST) -d config /usr/share/zapret
 	$(ROMFSINST) -d $(SRC_NAME)/lua/zapret-antidpi.lua /usr/share/zapret/lua/zapret-antidpi.lua
 	$(ROMFSINST) -d $(SRC_NAME)/lua/zapret-auto.lua /usr/share/zapret/lua/zapret-auto.lua
 	$(ROMFSINST) -d $(SRC_NAME)/lua/zapret-lib.lua /usr/share/zapret/lua/zapret-lib.lua
 	$(ROMFSINST) -d $(SRC_NAME)/lua/zapret-obfs.lua /usr/share/zapret/lua/zapret-obfs.lua
-	$(ROMFSINST) -p +x /usr/bin/zapret.sh
