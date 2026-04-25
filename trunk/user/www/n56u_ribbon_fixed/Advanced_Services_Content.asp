@@ -27,6 +27,7 @@ $j(document).ready(function() {
 	init_itoggle('telnetd');
 	init_itoggle('sshd_enable_gp');
 	init_itoggle('wins_enable', change_wins_enabled);
+	init_itoggle('http_ignore_sessions');
 	init_itoggle('lltd_enable');
 	init_itoggle('adsc_enable');
 	init_itoggle('crond_enable', change_crond_enabled);
@@ -291,7 +292,7 @@ function change_crond_enabled(){
                                     <div id="tabMenu" class="submenuBlock"></div>
                                     <div class="alert alert-info" style="margin: 10px;"><#Adm_Svc_desc#></div>
 
-                                    <table width="100%" cellpadding="4" cellspacing="0" class="table">
+                                    <table width="100%" cellpadding="4" cellspacing="0" class="table" style="margin-bottom: 8px;">
                                         <tr>
                                             <th colspan="2" style="background-color: #E3E3E3;"><#Adm_System_webs#></th>
                                         </tr>
@@ -333,6 +334,20 @@ function change_crond_enabled(){
                                                     <option value="1" <% nvram_match_x("", "http_access", "1","selected"); %>>Wired clients only</option>
                                                     <option value="2" <% nvram_match_x("", "http_access", "2","selected"); %>>Wired and MainAP clients</option>
                                                 </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><a class="help_tooltip" href="javascript:void(0);" onmouseover="openTooltip(this,23,2);"><#Adm_System_http_ignore#></a></th>
+                                            <td>
+                                                <div class="main_itoggle">
+                                                    <div id="http_ignore_sessions_on_of">
+                                                        <input type="checkbox" id="http_ignore_sessions_fake" <% nvram_match_x("", "http_ignore_sessions", "1", "value=1 checked"); %><% nvram_match_x("", "http_ignore_sessions", "0", "value=0"); %>>
+                                                    </div>
+                                                </div>
+                                                <div style="position: absolute; margin-left: -10000px;">
+                                                    <input type="radio" name="http_ignore_sessions" id="http_ignore_sessions_1" class="input" value="1" <% nvram_match_x("", "http_ignore_sessions", "1", "checked"); %>/><#checkbox_Yes#>
+                                                    <input type="radio" name="http_ignore_sessions" id="http_ignore_sessions_0" class="input" value="0" <% nvram_match_x("", "http_ignore_sessions", "0", "checked"); %>/><#checkbox_No#>
+                                                </div>
                                             </td>
                                         </tr>
                                     </table>
@@ -399,7 +414,7 @@ function change_crond_enabled(){
                                         </tr>
                                     </table>
 
-                                    <table width="100%" cellpadding="4" cellspacing="0" class="table">
+                                    <table width="100%" cellpadding="4" cellspacing="0" class="table" style="margin-bottom: 8px;">
                                         <tr>
                                             <th colspan="2" style="background-color: #E3E3E3;"><#Adm_System_term#></th>
                                         </tr>
@@ -442,7 +457,7 @@ function change_crond_enabled(){
                                             </td>
                                         </tr>
                                         <tr id="row_ssh_keys" style="display:none">
-                                            <td colspan="2" style="padding-bottom: 0px;">
+                                            <td colspan="2">
                                                 <a href="javascript:spoiler_toggle('authorized_keys')"><span><#Adm_System_sshd_keys#> (authorized_keys)</span></a>
                                                 <div id="authorized_keys" style="display:none;">
                                                     <textarea rows="8" wrap="off" spellcheck="false" maxlength="8192" class="span12" name="scripts.authorized_keys" style="resize:vertical; font-family:'Courier New'; font-size:12px;"><% nvram_dump("scripts.authorized_keys",""); %></textarea>
