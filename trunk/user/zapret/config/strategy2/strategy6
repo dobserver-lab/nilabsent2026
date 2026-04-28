@@ -3,10 +3,14 @@
 
 --blob=quic_google:@/usr/share/zapret/fake/quic_initial_www_google_com.bin
 --blob=tls_google:@/usr/share/zapret/fake/tls_clienthello_www_google_com.bin
+--blob=stun:@/usr/share/zapret/fake/stun.bin
 
 ### https, http
---filter-tcp=443,80 --filter-l7=http,tls <HOSTLIST>
+--filter-tcp=443,80 --filter-l7=http,tls
+<HOSTLIST>
+#--hostlist-exclude=/etc/storage/zapret/exclude.list
 --payload=tls_client_hello
+--lua-desync=fake:blob=stun:tcp_seq=10000
 --lua-desync=fake:blob=fake_default_tls:tls_mod=rnd,dupsid,sni=fonts.google.com:tcp_seq=10000
 #--lua-desync=fake:blob=fake_default_tls:tls_mod=rnd,dupsid,sni=yandex.net:tcp_ts=-600000
 --lua-desync=hostfakesplit:host=ya.ru:midhost=host-2:seqovl=sniext+3:seqovl_pattern=tls_google:tcp_ack=-66000:tcp_ts_up
