@@ -337,7 +337,7 @@ function zapret_strategy_change(o, v) {
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <a href="javascript:spoiler_toggle('domain.list')"><span><#ZapretDomainLists#> (<b>user.list, auto.list, exclude.list</b>):</span> <i style="scale: 75%;" class="icon-chevron-down"></i></a>
+                                                <a href="javascript:spoiler_toggle('domain.list')"><span><#ZapretDomainLists#>:</span> <i style="scale: 75%;" class="icon-chevron-down"></i></a>
                                                 <table id="domain.list" height="100%" width="100%" cellpadding="0" cellspacing="0" class="table" style="border: 0px; margin: 0px; margin-bottom: 8px; display:none">
                                                     <tr>
                                                         <td style="border:0px; padding-bottom: 4px;">
@@ -367,7 +367,7 @@ function zapret_strategy_change(o, v) {
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <a href="javascript:spoiler_toggle('ipset.list')"><span><#ZapretIpsetLists#> (<b>ipset.list, ipset-exclude.list</b>):</span> <i style="scale: 75%;" class="icon-chevron-down"></i></a>
+                                                <a href="javascript:spoiler_toggle('ipset.list')"><span><#ZapretIpsetLists#>:</span> <i style="scale: 75%;" class="icon-chevron-down"></i></a>
                                                 <table id="ipset.list" height="100%" width="100%" cellpadding="0" cellspacing="0" class="table" style="border: 0px; margin: 0px; margin-bottom: 8px; display:none">
                                                     <tr>
                                                         <td style="border:0px; padding-bottom: 4px;">
